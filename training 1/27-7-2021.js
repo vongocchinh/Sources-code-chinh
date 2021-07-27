@@ -131,16 +131,14 @@ let arrRest=[
 const functionFindIndex=(id,...arrs)=>{
 
     let user={};
-    for(let i=0;i<arrs.length;i++){
-        if(arrs[i].id===id){
-            user=arrs[i];
-        }
-    }
+    user=arrs.find((value,key)=>{
+        return value.id===id;
+    })
     return user;
 }
 
 
-console.log("findIndex rest Parameter : "+functionFindIndex(1,...arrRest).name);
+console.log("findIndex rest Parameter : "+functionFindIndex(2,...arrRest).name);
 
 
 
@@ -157,11 +155,13 @@ console.log("result of f4 : "+(f4(1, 2, ...params) === 9));
 
 var str = "chinh"
 var chars = [...str ] 
-console.log("convert chuoi sang array: "+chars);
+console.log("convert chuoi sang array: ");
+console.log(chars);
 
 
 let strArr= Object.values(str);
-console.log("convert chuoi sang array: "+strArr);
+console.log("convert chuoi sang array: ");
+console.log(strArr);
 
 
 // xóa các kí tự chữ trong chuoix sau:
