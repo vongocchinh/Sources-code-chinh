@@ -14,7 +14,7 @@ const List: React.FC<ListTS> = ({ arr,onDelete }) => {
             {arr.map((value, key) => {
                 return (
                     <div key={key} className="item">
-                        <p>{key}</p><p>{value.name}</p><p>{value.age}</p><p onClick={()=>{onDelete(value.id)}} >X</p>
+                        <p>{key}</p><p>{value.name}</p><p>{value.age}</p><p style={{cursor:"pointer"}} onClick={()=>{onDelete(value.id)}} >Xóa</p>
                     </div>
                 )
             })}

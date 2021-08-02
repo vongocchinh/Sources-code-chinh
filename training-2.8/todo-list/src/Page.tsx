@@ -20,7 +20,7 @@ const initialState: Array<Users> = [
     id:"2"
   }
 ]
-function App() {
+function Page() {
 
   const [arr, setArr] = useState(initialState);
 
@@ -41,15 +41,16 @@ function App() {
     return [...arr.slice(0, index), ...arr.slice(index + 1)];
   }
   return (
-    <div className="container">
-      <div className="container-item">
-        <Form add={add} />
-      </div>
-      <div className="container-item">
-        <List arr={arr} onDelete={deleteU} />
-      </div>
-    </div>
+          <div className="container">
+            {/* <a  href="/login" >login</a> */}
+            <div className="container-item">
+              <Form add={add} />
+            </div>
+            <div className="container-item">
+              <List arr={arr} onDelete={deleteU} />
+            </div>
+          </div>
   );
 }
 
-export default App;
+export default Page;
